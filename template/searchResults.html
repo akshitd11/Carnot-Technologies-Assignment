@@ -106,22 +106,21 @@
                             <div class="solu_description">
                                 <p>
                                 {% if schoolinfo %}
-                                
+                                {% for s in schoolinfo|slice:":1" %}
                                                                 
-                                <div class = "col" >ID = {{ post.id }}  ||  Email ={{ post.email }}</div>
+                                <div class = "col">ID = {{ post.id }}  ||  Email ={{ post.email }}</div>
                                 
                                 <div class="col">Books = {{ post.books }} || School = {{ post.schools }}</div>
-                               
-                                
-                                {% for s in schoolinfo|slice:":1"  %}
                                 <div class="col">School Email = {{ s.email }} </div>                                
                                 <div class="col">School Phone = {{ s.phone }}</div>
+                                <div>
                                 {% endfor %}
-                                {% for s in bookInfo|slice:":1"  %}
-                                <div class="col">No. of Pages = {{ s.number_of_Pages }} </div>                                
-                                {% endfor %}
-
-                                
+                                {% else %}
+                                <div class="col">ID = {{ post.id }}</div>
+                                <div class="col">Email ={{ post.email }}</div>
+                                <div class="col">Books = {{ post.books }}</div>
+                                <div class="col">Gender = {{ post.gender }}</div>
+                                <div class="col">Schools = {{ post.schools }}</div>
                                 {% endif %}
 
 

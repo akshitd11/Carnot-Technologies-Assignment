@@ -1,8 +1,10 @@
+from email import message
 from logging import exception
 from turtle import title
 from django.shortcuts import render
 from home.models import *
 from django import forms
+from django.contrib import messages
 
 
 # Create your views here.
@@ -21,7 +23,9 @@ def index(request):
         books = request.POST.get("books")
         student = Student(firstname=firstname, lastname=lastname,
                           email=email, gender=gender, schools=schools, books=books)
+        
         student.save()
+        messages.success(request, "Save Succuessfull!")
     return render(request, "index.html")
 
 
