@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+<div class="container">    
+    <form method="get" action="/searchResults" class="form-inline my-2 my-l g-0 ">
+        <input class="form-control mr-sm-2" type="search" placeholder="ID" aria-label="Search" name="ID" id = "ID">
+        <input class="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search" name="Name" id = "Name">
+
+    <button class = " btn btn-outline-success my-2 my-sm-0 " type = "submit" > Search </button>
+    
+</div> 
+
+{% endblock body %}

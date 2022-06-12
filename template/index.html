@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+<div class="container">
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <label for="firstname"class="form-label">First Name</label>
+                <input type="text" id="firstname" class="form-control" name="firstname" required>
+            </div>
+            <div class="col">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name = "lastname" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email" required>
+            </div>
+            <div class="col">
+                <label for="school" class="form-label">School</label>
+                <input type="text" class="form-control" name = "school" id="school" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="dropdown" class="form-label">Gender</label>
+                <select name="dropdown" class="form-control" >
+                
+                <option selected="selected" disabled>Gender</option>
+                        <option value="Male"   >Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                        
+                </select>
+            </div> 
+            
+                <div class="col">
+                    <label for="exampleInputbooks" class="form-label">Books</label>
+                    <input type="books" class="form-control" name = "books" id="exampleInputbooks" required>
+                </div>
+        </div>
+
+
+
+        <div class="container" margin = 20px>
+        <button type="submit" class="btn btn-primary" py>Submit</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock body %}
