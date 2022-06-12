@@ -108,9 +108,10 @@
                                 {% if schoolinfo %}
                                 {% for s in schoolinfo|slice:":1" %}
                                                                 
-                                <div class = "col">ID = {{ post.id }}  ||  Email ={{ post.email }}</div>
-                                
-                                <div class="col">Books = {{ post.books }} || School = {{ post.schools }}</div>
+                                <div class = "col">ID = {{ post.id }}  </div>
+                                <div class = "col"> Email ={{ post.email }}</div>
+                                <div class = "col">School = {{ post.schools }}</div>
+                                <div class="col">Books = {{ post.books }} </div>
                                 <div class="col">School Email = {{ s.email }} </div>                                
                                 <div class="col">School Phone = {{ s.phone }}</div>
                                 {% if bookInfo %}
