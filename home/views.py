@@ -41,9 +41,18 @@ def searchByName(name):
     for p in sinfo:
         temp = p.schools
         temp1 = p.books
+    print(temp1)
 
-    schoolinfo = School.objects.filter(school__icontains = temp)
-    bookInfo = Book.objects.filter(title__icontains = temp1)
+    schoolinfo = ""
+    bookInfo = ""
+    if temp != "" or None:
+        schoolinfo = School.objects.filter(school__icontains = temp)
+    if temp1 != "" or None:    
+        bookInfo = Book.objects.filter(title__icontains = temp1)
+        for book in bookInfo:
+            print("****")
+            print(book.no_of_Pages)
+    
     params = {"sinfo": sinfo, "schoolinfo" : schoolinfo, "query": query, "bookInfo": bookInfo}       
     return params
             
@@ -56,9 +65,19 @@ def searchByID(id):
         temp = p.schools
         temp1 = p.books
     
-
-    schoolinfo = School.objects.filter(school__icontains = temp)
-    bookInfo = Book.objects.filter(title__icontains = temp1)
+    # print(temp1)
+    schoolinfo = ""
+    bookInfo = ""
+    if temp != "" or None:
+        schoolinfo = School.objects.filter(school__icontains = temp)
+    if temp1 != "" or None:
+        print(temp1)
+        bookInfo = Book.objects.filter(title__icontains= temp1)
+        print(bookInfo)
+        for book in bookInfo:
+            print("****")
+            print(book.number_of_Pages)
+    
 
     params = {"sinfo": sinfo, "schoolinfo" : schoolinfo, "query": query, "bookInfo": bookInfo} 
     return params 

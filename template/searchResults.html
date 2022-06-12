@@ -113,6 +113,13 @@
                                 <div class="col">Books = {{ post.books }} || School = {{ post.schools }}</div>
                                 <div class="col">School Email = {{ s.email }} </div>                                
                                 <div class="col">School Phone = {{ s.phone }}</div>
+                                {% if bookInfo %}
+                                {% for book in bookInfo %}
+                                <div class="col">Number of Pages= {{ book.number_of_Pages }}</div>
+
+                                
+                                {% endfor %}
+                                {% endif %}
                                 <div>
                                 {% endfor %}
                                 {% else %}
@@ -121,6 +128,13 @@
                                 <div class="col">Books = {{ post.books }}</div>
                                 <div class="col">Gender = {{ post.gender }}</div>
                                 <div class="col">Schools = {{ post.schools }}</div>
+                                {% if bookInfo %}
+                                {% for book in bookInfo %}
+                                <div class="col">Number of Pages= {{ book.number_of_Pages }}</div>
+
+                                
+                                {% endfor %}
+                                {% endif %}
                                 {% endif %}
 
 

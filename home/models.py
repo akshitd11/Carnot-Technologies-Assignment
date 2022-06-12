@@ -22,7 +22,7 @@ class Book(models.Model):
     title = models.CharField(max_length=122)
     author_name =models.CharField(max_length=122) 
     date_of_Publication = models.CharField(max_length=122)
-    number_of_Pages = models.IntegerField()
+    number_of_Pages = models.CharField(max_length=122)
 
     
 
